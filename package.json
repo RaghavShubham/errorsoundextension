@@ -1,0 +1,49 @@
+{
+  "name": "maakabhosadaaag",
+  "displayName": "maakabhosadaaag",
+  "description": "Plays a custom sound when a terminal command fails (non-zero exit code)",
+  "version": "0.0.1",
+  "publisher": "Daijobu",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "maakabhosadaaag",
+      "properties": {
+        "maakabhosadaaag.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable the error sound"
+        },
+        "maakabhosadaaag.volume": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Volume level (0-1). Only supported on macOS."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.5.0"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.7.1"
+  }
+}
