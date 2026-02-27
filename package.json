@@ -1,9 +1,9 @@
 {
   "name": "maakabhosadaaag",
   "displayName": "maakabhosadaaag",
-  "description": "Plays a custom sound when a terminal command fails (non-zero exit code)",
+  "description": "Plays a sound when your terminal command fails. Emotional damage for your shell.",
   "version": "0.0.1",
-  "publisher": "Daijobu",
+  "publisher": "Daijoubu",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,6 +14,15 @@
   },
   "categories": [
     "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "sound",
+    "error",
+    "fun",
+    "productivity",
+    "audio",
+    "notification"
   ],
   "activationEvents": [
     "onStartupFinished"
@@ -26,14 +35,14 @@
         "maakabhosadaaag.enabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable or disable the error sound"
+          "description": "Enable or disable the error sound. Turn it off if you can't handle the truth."
         },
         "maakabhosadaaag.volume": {
           "type": "number",
           "default": 0.5,
           "minimum": 0,
           "maximum": 1,
-          "description": "Volume level (0-1). Only supported on macOS."
+          "description": "Volume level from 0 (silent regret) to 1 (full disappointment). macOS only."
         }
       }
     }
