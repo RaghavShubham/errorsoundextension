@@ -4,6 +4,11 @@
   "description": "Plays a custom sound when a terminal command fails (non-zero exit code)",
   "version": "0.0.1",
   "publisher": "Daijobu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamraghav/errorsoundextention"
+  },
   "engines": {
     "vscode": "^1.93.0"
   },
