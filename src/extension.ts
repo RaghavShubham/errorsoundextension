@@ -5,8 +5,6 @@ import * as path from "path";
 let disposable: vscode.Disposable | undefined;
 
 export function activate(context: vscode.ExtensionContext) {
-  const soundPath = path.join(context.extensionPath, "sounds", "error.mp3");
-
   disposable = vscode.window.onDidEndTerminalShellExecution((e) => {
     const config = vscode.workspace.getConfiguration("maakabhosadaaag");
     if (!config.get<boolean>("enabled", true)) {
@@ -14,6 +12,12 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     if (e.exitCode !== undefined && e.exitCode !== 0) {
+      const selectedSound = config.get<string>("sound", "ma-ka-bhosda-aag");
+      const soundPath = path.join(
+        context.extensionPath,
+        "sounds",
+        `${selectedSound}.mp3`
+      );
       playSound(soundPath, config.get<number>("volume", 1.0));
     }
   });
